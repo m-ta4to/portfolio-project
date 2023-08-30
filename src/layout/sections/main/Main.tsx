@@ -37,7 +37,7 @@ position: relative;
     content: "";
     width: 360px;
     height: 470px;
-    border 5px solid ${Theme.colors.accent};
+    border: 5px solid ${Theme.colors.accent};
     
     position: absolute;
     top: -24px;

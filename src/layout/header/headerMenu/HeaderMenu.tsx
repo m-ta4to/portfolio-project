@@ -29,11 +29,10 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
 };
 
 const StyledHeaderMenu = styled.nav`
-  margin-bottom: 40px;
 
   ul {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
   }
 
