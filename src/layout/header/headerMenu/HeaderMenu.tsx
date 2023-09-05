@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components";
 import {Theme} from "../../../styles/Theme";
 
@@ -34,6 +35,10 @@ const StyledHeaderMenu = styled.nav`
     display: flex;
     gap: 30px;
     justify-content: center;
+  }
+  
+  @media ${Theme.media.tablet} {
+    display: none;
   }
 
 `
