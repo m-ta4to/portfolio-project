@@ -7,6 +7,7 @@ import {Theme} from "../../../styles/Theme";
 import {Font} from "../../../styles/Common";
 
 
+
 export const Main = () => {
     return (
         <StyledMain>
@@ -46,6 +47,7 @@ position: relative;
     top: -24px;
     left: 24px;
     z-index: -1;
+    
     @media ${Theme.media.mobile} {
       width: 314px;
       height: 414px;
@@ -65,14 +67,14 @@ const Photo = styled.img`
         width: 310px;
         height: 380px;
       }
-               `
+`
 
 const Greeting = styled.span`
     font-weight: 400;
   font-size: 14px;
 `
 const Name = styled.h2`
-  ${Font({family: "\"Josefin Sans\",sans-serif" , weight: 700, Fmax: 50, Fmin: 36})}
+  ${Font({family: "'Josefin Sans',sans-serif" , weight: 700, Fmax: 50, Fmin: 36})}
   letter-spacing: 0.05em;
   margin: 10px 0;
 
@@ -100,6 +102,6 @@ const Name = styled.h2`
  
 `
 const MainTitle = styled.h1`
-  ${Font({weight: 400, Fmax: 27, Fmin: 20})}
+  // ${Font({weight: 400, Fmax: 27, Fmin: 20})}
   
 `

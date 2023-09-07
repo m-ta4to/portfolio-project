@@ -4,6 +4,7 @@ import {NONAME} from "dns";
 import {Icon} from "../../components/icon/Icon";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Theme} from "../../styles/Theme";
+import {Font} from "../../styles/Common";
 
 export const Footer = () => {
     return (
@@ -49,9 +50,7 @@ const StyledFooter = styled.footer`
  padding: 40px 0;
 `
 const Name = styled.span`
-font-family: "Josefine Sans",sans-serif;
-  font-weight: 700;
-  font-size: 22px;
+  ${Font({family: '"Josefine Sans",sans-serif', weight: 700, Fmax: 22, Fmin: 16 })}
   letter-spacing: 3px;
   
 `
