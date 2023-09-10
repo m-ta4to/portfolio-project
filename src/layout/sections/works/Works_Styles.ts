@@ -5,7 +5,9 @@ import {TabLink} from "../../../components/Link";
 import {Button} from "../../../components/Button";
 
 const Works = styled.section`
-    ${FlexWrapper} {
+  position: relative;
+  
+  ${FlexWrapper} {
       gap: 30px;
     }
 
@@ -13,20 +15,71 @@ const Works = styled.section`
 
 const Work = styled.div`
   background-color: ${Theme.colors.secondaryBg};
-  width: 330px;
-  flex-grow: 1;
+  //width: 330px;
+  //flex-grow: 1;
   
   ${TabLink} {
     padding: 10px 0;
     
-    &+ ${TabLink}{
+    & + ${TabLink}{
       margin-left: 20px;
     }
-    
-    ${Theme.media.dekstop} {
-      max-width: 540px;
+  }
+  
+  ${Theme.media.dekstop} {
+    //max-width: 540px;
+  }
+`
+
+const ImageWrapper = styled.div`
+  position: relative;
+
+  ${Button} {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+    transition: ${Theme.animations.transition};
+
+    &::before {
+      width: 100%;
+      height: 100%;
     }
-    
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: ${Theme.animations.transition};
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+
+  ${Button} {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+  
+  @media ${Theme.media.tablet} {
+    &::before {
+      opacity: 1;
+    }
+
+    ${Button} {
+      opacity: 1;
+    }
   }
 `
 const Image = styled.img `
@@ -47,52 +100,7 @@ const Text = styled.p`
 margin: 14px 0 10px;
 
 `
-const ImageWrapper = styled.div`
-position: relative;
-  
-${Button} {
-  opacity: 0;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  
-  &::before{
-    width: 100%;
-    height: 100%;
-  }
-}
-  
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(4px);
-    opacity: 0;
-  }
 
-&:hover {
-  &::before {
-    opacity: 1;
-  }
-}
-${Button} {
-  opacity: 1;
-}
-  
-  @media ${Theme.media.tablet} {
-    &::before {
-      opacity: 1;
-    }
-  ${Button} {
-    opacity: 1;
-  }
-  }
-`
 
 export const S = {
     Works,

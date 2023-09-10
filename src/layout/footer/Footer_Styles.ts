@@ -6,6 +6,7 @@ import {Font} from "../../styles/Common";
 const Footer = styled.footer`
   background-color: ${Theme.colors.primaryBg};
  padding: 40px 0;
+  position: relative;
 `
 const Name = styled.span`
   ${Font({family: '"Josefine Sans",sans-serif', weight: 700, Fmax: 22, Fmin: 16 })}
@@ -29,6 +30,7 @@ background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ${Theme.animations.transition};
   color: ${Theme.colors.accent};
   
   &:hover{

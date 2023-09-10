@@ -3,14 +3,20 @@ import styled from "styled-components";
 import {Container} from "../../../../components/Container";
 import {TabLink} from "../../../../components/Link";
 
-export const TabMenu = (props: { menuItems: Array<string> }) => {
+export type TabsStatusType = "all" | "landing" | "react" | "spa"
+type TabMenuPropsType = {
+    tabsItems: Array<{status:TabsStatusType, title: string }>
+    changeFilterStatus: (value:TabsStatusType) => void
+    currentFilterStatus: string
+}
+export const TabMenu = (props: TabMenuPropsType) =>   {
     return (
         <StyledTabMenu>
             <Container>
                 <ul>
-                    {props.menuItems.map((item, index) => {
+                    {props.tabsItems.map((item, index) => {
                         return <ListItem key={index}>
-                            <TabLink href="">{item}</TabLink>
+                            <TabLink active={props.currentFilterStatus === item.status} as={"button"} onClick= { () => {props.changeFilterStatus(item.status)}}>{item.title} </TabLink>
                         </ListItem>
 
                     })}
